@@ -1,0 +1,41 @@
+DATA:
+matriz_00 1 // Primera fila, primer elemento
+matriz_01 2 // Primera fila, segundo elemento
+matriz_10 3 // Segunda fila, primer elemento
+matriz_11 4 // Segunda fila, segundo elemento
+det       0 // Determinante = 1 * 4 - 2 * 3 = -2. El resultado se almacena aquí
+
+CODE:
+// Código empieza aquí.
+MOV A, (matriz_00) 
+MOV B, (matriz_11)
+
+MOV det, 0
+// Código termina aquí.
+
+loop_multiplicacion1:
+    JEQ fin_multiplicacion1
+    ADD det, A
+    DEC B
+    JMP loop_multiplicacion1
+
+fin_multiplicacion1:
+// Ahora det almacena la mult. de matriz00 y matriz 11
+    MOV A, (matriz_01)
+    MOV B, (matriz_10)
+
+    MOV A, 0
+
+loop_multiplicacion2:
+    JEQ fin_multiplicacion2
+    ADD A, (matriz_01)
+    DEC B 
+    JMP loop_multiplicacion2
+
+fin_multiplicacion2:
+    SUB det, A
+
+end:
+MOV A,(det)
+MOV B,(det)
+JMP end

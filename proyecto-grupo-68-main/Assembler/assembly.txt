@@ -1,0 +1,69 @@
+CODE:
+MOV A,B
+MOV B,A
+MOV A,1
+MOV B,1
+MOV A,(1)
+MOV B,(1)
+MOV (1),A
+MOV (1),B
+ADD A,B
+ADD B,A
+ADD A,1
+ADD B,1
+ADD A,(1)
+ADD B,(1)
+ADD (1)
+SUB A, B
+SUB B, A
+SUB A,1
+SUB B,1
+SUB A,(1)
+SUB B,(1)
+SUB (1)
+AND A, B
+AND B, A
+AND A, 1
+AND B, 1
+AND A, (1)
+AND B, (1)
+AND (1)
+OR A, B
+OR B, A
+OR A, 1
+OR B, 1
+OR A, (1)
+OR B, (1)
+OR (1)
+XOR A, B
+XOR B, A
+XOR A, 1
+XOR B, 1
+XOR A, (1)
+XOR B, (1)
+XOR (1)
+NOT A
+NOT B,A
+NOT (1),A
+SHL A
+SHL B,A
+SHL (1),A
+SHR A
+SHR B,A
+SHR (1),A
+INC A
+INC B
+INC (1)
+DEC A
+CMP A,B
+CMP A,1
+CMP A,(1)
+JMP 1
+JEQ 1
+JNE 1
+JGT 1
+JGE 1
+JLT 1
+JLE 1
+JCR 1
+NOP

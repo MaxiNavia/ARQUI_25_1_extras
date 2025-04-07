@@ -1,0 +1,65 @@
+// COMENTARIO IGNORALO BROOOO
+DATA:
+     x            110b
+  //   y 10h
+  //   z 10
+  //   v 10d
+     //   ui      4      // Se guarda en direccion 0
+   // arreglo 10h
+      //     20d
+    //       40
+    //        1010b
+   // arreglo2 33
+     //       35h
+    //        70d
+     //       90d
+    // JIJIJIJI
+CODE:
+// WOQOWOIW
+    // AAUISD
+    MOV A, (10)
+   MOV A, (x) // A = MEM[x] = 3
+   MOV B, (x)
+   MOV (x), A
+   MOV (x),B
+   ADD A,(x)
+   ADD B,(x)
+   ADD (x)
+   SUB A,(x)
+   SUB B,(x)
+   SUB (x)
+   AND A,(x)
+   AND A,(x)
+   AND (x)
+   OR A,(x)
+   OR A,(x)
+   OR (x)
+   XOR A,(x)
+   XOR A,(x)
+   XOR (x)
+   NOT (x),A
+   SHL (x),A
+   SHR (x),A
+   INC (x)
+   CMP A,(x)
+   JMP end
+   CALL end
+   CMP A,(B)
+  
+   POP A // TIENE QUE MANDAR DOS COIDGOS DE MAQUINA // podemos retornar una lista con ambos codigos y así recorrer 
+   POP B
+   NOP
+   RET
+   end:
+
+
+
+ //  MOV A, (1)
+  //  MOV A, (arreglo)
+ //   SUB B,   (   arreglo     )
+ //   MOV A,      2
+   // JMP end
+   // MOV B,5
+ //   end:
+ //       MOV B,3
+ //  MOV           A,B

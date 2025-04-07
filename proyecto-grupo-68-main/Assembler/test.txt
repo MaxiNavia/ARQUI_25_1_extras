@@ -1,0 +1,69 @@
+DATA:
+led 0
+sw 0
+display 0
+btn 0
+seg 0
+mseg 0
+useg 0
+lcd 0
+
+var1       4d              // 0
+var2    1001b              // 1
+
+     c    AAh           // 2
+
+array   10              // 3
+        15d             //4
+        1h              //5
+        101b            //6
+
+CODE:
+
+MOV A   ,var1              // A=4
+MOV    B, var2             // B=9
+
+ADD A,B                 // A=13
+
+MOV B,    c             // B=170 o AAh
+
+ADD B,A                 // B=183 o B7h 
+
+MOV (var1),B               // var1=183
+
+
+MOV B,array             // B=3
+MOV A,  (   B)          // A=10
+
+INC      B            // B=4
+ADD A,(  B   )          // A=25
+
+INC B                  // B=5
+
+ADD A,(B)               // A=26
+
+INC B                 // B=6
+
+SUB A,(B)               // A=21
+
+CMP A,21
+JEQ bien
+
+JMP mal 
+
+bien:
+  MOV A,11h
+  MOV B,AAh 
+  JMP end
+
+mal:
+  MOV A,255
+  MOV B,255
+  JMP end 
+
+  //// Se guarda en el display el A
+  ///  Se guarda en los leds el B
+end:
+  MOV (2), A
+  MOV (0), B
+  JMP end
